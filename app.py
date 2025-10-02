@@ -10,7 +10,13 @@ import base64
 load_dotenv()
 
 # Configure the client with your API key
-client = genai.Client()
+import os
+api_key = os.getenv('GOOGLE_API_KEY') or os.getenv('GEMINI_API_KEY')
+if not api_key:
+    st.error("🔑 Google API key not found! Please add your GOOGLE_API_KEY or GEMINI_API_KEY to the environment variables.")
+    st.stop()
+
+client = genai.Client(api_key=api_key)
 
 # Page configuration
 st.set_page_config(
