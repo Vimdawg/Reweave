@@ -834,16 +834,16 @@ def main():
         )
         
         st.markdown("### 🎾 Share Your Style!")
-        st.markdown("*Show off your champion look on social media and inspire other pickleball players!*")
+        st.markdown("*Show off your champion look with your friends!*")
         st.markdown('</div>', unsafe_allow_html=True)
     
     # Footer with blue theme
     st.markdown("---")
     st.markdown("""
     <div style="text-align: center; color: #1e3a8a; padding: 2rem;">
-        <p><strong>🏓 Reweave - Where Champions Find Their Style</strong></p>
-        <p>Powered by Google Gemini AI • Made with 🎾 for Pickleball Players</p>
-        <p><em>"Step onto the court with confidence!"</em></p>
+        <p><strong>🏓 Reweave - Style with a Serve, Woven for Winners </strong></p>
+        <p><strong>Powered by Google Gemini AI • Made with ❤️ for Pickleball Players</strong></p>
+        <p><strong>"Step onto the court with confidence!"</strong></p>
     </div>
     """, unsafe_allow_html=True)
 
