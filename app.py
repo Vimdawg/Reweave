@@ -789,14 +789,32 @@ def main():
                         # Prepare images
                         person_image = st.session_state['uploaded_image']
                         bag_image = Image.open(st.session_state['selected_bag'])
+                        logo_image = Image.open('logo.png')
                         
-                        # Enhanced AI prompt for pickleball
-                        prompt = """Create a new image by combining the elements from the provided images. Take the person from image 1 and place them with the handbag from image 2. The final image should be a natural scene of the person holding the handbag in a pickleball court setting. Make sure the person looks like they're ready to play pickleball, with the bag fitting naturally into the sports environment. The setting should feel authentic and sporty."""
+                        # Focused AI prompt with 3 key elements
+                        prompt = """CRITICAL: Use the EXACT person from the first image. Do not create a new person.
+
+Create a composition with these 3 elements:
+- IMAGE 1 (person): Use this EXACT person - preserve their face, skin tone, hair, body, and clothing completely. This is the main subject.
+- IMAGE 2 (bag): Add this handbag to the person from IMAGE 1. The person should hold/wear it naturally.
+- IMAGE 3 (logo): Place this logo as a subtle watermark in the top-left corner.
+
+IMPORTANT - BALL SPECIFICATION:
+- Use PICKLEBALL balls only - these are plastic balls with holes (like wiffle balls)
+- DO NOT use tennis balls (fuzzy, yellow, solid)
+- Pickleball balls are typically white or bright colored with circular holes
+- They are smaller and lighter than tennis balls
+- This is crucial for sport authenticity
+
+Setting: Professional pickleball court with proper pickleball balls scattered in background.
+Style: Natural sports photography - person ready to play pickleball with their new bag.
+
+MANDATORY: The person's appearance from IMAGE 1 must remain completely unchanged."""
                         
                         # Call the API
                         response = client.models.generate_content(
                             model="gemini-2.5-flash-image-preview",
-                            contents=[prompt, person_image, bag_image]
+                            contents=[prompt, person_image, bag_image, logo_image]
                         )
                         
                         # Process response
