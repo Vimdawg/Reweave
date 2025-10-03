@@ -870,6 +870,24 @@ MANDATORY: The person's appearance from IMAGE 1 must remain completely unchanged
         <p><strong>"Step onto the court with confidence!"</strong></p>
     </div>
     """, unsafe_allow_html=True)
+    
+    # Floating Chat Button - Shieldbase AI Chatbot
+    st.markdown("""
+    <div style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;">
+        <a href="https://demo.sbai.cloud/chat/ca61bc90-3fb9-4cde-a7ed-aef28d127c1a" 
+           target="_blank" 
+           style="display: inline-block; width: 60px; height: 60px; background: #4F00ED; 
+                  border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+                  color: white; text-decoration: none; box-shadow: 0 4px 12px rgba(79, 0, 237, 0.4);
+                  transition: all 0.3s ease; border: none; cursor: pointer;"
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 6px 20px rgba(79, 0, 237, 0.6)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(79, 0, 237, 0.4)'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 16 16" fill="white">
+                <path d="M8.006 0a8.006 8.006 0 0 0-6.829 3.826 7.995 7.995 0 0 0-.295 7.818l-.804 2.402a1.48 1.48 0 0 0 1.877 1.876l2.403-.8a8.006 8.006 0 0 0 11.42-5.25 7.994 7.994 0 0 0-4.28-9.066A8.007 8.007 0 0 0 8.006 0Zm0 14.22a6.226 6.226 0 0 1-3.116-.836.89.89 0 0 0-.727-.074l-2.207.736.736-2.206a.888.888 0 0 0-.074-.727A6.218 6.218 0 0 1 7.19 1.831a6.227 6.227 0 0 1 6.565 3.784 6.218 6.218 0 0 1-1.96 7.318 6.227 6.227 0 0 1-3.789 1.286Z"></path>
+            </svg>
+        </a>
+    </div>
+    """, unsafe_allow_html=True)
 
 if __name__ == "__main__":
     main()
